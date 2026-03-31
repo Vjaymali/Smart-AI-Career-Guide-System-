@@ -1,0 +1,644 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background:#ffffff;
+  color: #1f2933;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 60px;
+    background: linear-gradient(90deg,#7c3aed,#ec4899,#3b82f6);
+}
+
+.nav-links a{
+margin-left:30px;
+text-decoration:none;
+font-weight:600;
+color:black;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#7c3aed;
+}
+
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: black;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar li {
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar a.login-btn {
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero{
+position:relative;
+background:white;
+padding:100px 10%;
+overflow:hidden;
+}
+
+/* glowing gradient */
+
+.hero::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+
+background: radial-gradient(circle,
+rgba(124,58,237,0.35),
+transparent 70%);
+
+top:-150px;
+left:-150px;
+
+filter: blur(80px);
+}
+
+/* second glow */
+
+.hero::after{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+
+background: radial-gradient(circle,
+rgba(236,72,153,0.35),
+transparent 70%);
+
+bottom:-150px;
+right:-150px;
+
+filter: blur(80px);
+}
+
+.hero-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:relative;
+z-index:2;
+}
+
+.hero-left img{
+width:420px;
+animation: float 4s ease-in-out infinite;
+}
+
+.hero-right{
+max-width:520px;
+}
+
+.hero-right h1{
+font-size:48px;
+margin-bottom:20px;
+color:#222;
+}
+
+.hero-right p{
+font-size:18px;
+color:#555;
+margin-bottom:30px;
+line-height:1.6;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
+}
+
+/* BUTTON */
+
+.hero-btn{
+display:inline-block;
+padding:14px 34px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+color:black;
+background: linear-gradient(90deg,#7c3aed,#ec4899);
+transition:0.3s;
+}
+
+.hero-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(124,58,237,0.4);
+}
+
+/* How it works section */
+
+.how-it-works{
+padding:100px 10%;
+text-align:center;
+background:linear-gradient(135deg,#f9fafb,#eef2ff);
+}
+
+.how-it-works h2{
+font-size:36px;
+margin-bottom:60px;
+}
+
+.cards-container{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+/* MODERN GRADIENT CARDS */
+
+.career-card{
+
+width:280px;
+padding:35px;
+
+border-radius:18px;
+
+background: linear-gradient(135deg,#7c3aed,#ec4899);
+
+color:rgb(15, 15, 15);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+transition:all 0.35s ease;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* glass shine effect */
+
+.career-card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.35),
+transparent
+);
+transition:0.5s;
+}
+
+.career-card:hover::before{
+left:100%;
+}
+
+.career-card h3{
+margin-bottom:15px;
+font-size:22px;
+font-weight:700;
+}
+
+.career-card p{
+color:#0c0c0c;
+line-height:1.6;
+font-size:15px;
+}
+
+.career-card:hover{
+
+transform:translateY(-12px) scale(1.04);
+
+box-shadow:0 20px 50px rgba(124,58,237,0.45);
+
+}
+
+/* WHY CHOOSE SECTION */
+
+.section{
+padding:100px 10%;
+text-align:center;
+}
+
+.section h2{
+font-size:36px;
+margin-bottom:60px;
+color:#222;
+}
+
+
+/* GRID LAYOUT */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+
+/* CARD STYLE */
+
+.card{
+
+padding:35px;
+border-radius:20px;
+
+color:black;
+
+font-weight:800;
+
+background: linear-gradient(135deg,#7c3aed,#ec4899);
+
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+transition:0.3s;
+
+cursor:pointer;
+
+}
+
+
+/* HOVER EFFECT */
+
+.card:hover{
+
+transform:translateY(-8px) scale(1.03);
+
+box-shadow:0 15px 35px rgba(124,58,237,0.4);
+
+}
+
+/* RESULT */
+
+.result-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.result-box img {
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+
+footer {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer textarea {
+  width: 300px;
+  height: 80px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+footer button {
+  margin-top: 10px;
+}
+
+copyright {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* AUTH */
+
+.auth-body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(90deg, #7c3aed, #ec4899);
+}
+
+.auth-container{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    width:350px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+
+.auth-container h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.auth-container input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.auth-container button{
+    width:100%;
+    padding:12px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    border:none;
+    color:white;
+    border-radius:6px;
+    font-weight:600;
+}
+
+/* ================= REGISTER EXTRA FEATURES ================= */
+
+/* Password Eye Icon */
+.password-container {
+    position: relative;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Buttons (extend your existing style) */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+}
+
+/* OTP Button */
+.otp-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Register Button (keep theme) */
+.register-btn {
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    color: white;
+}
+
+/* Loader Animation */
+.loader {
+    display: none;
+    margin: 10px auto;
+    border: 4px solid #ddd;
+    border-top: 4px solid #7c3aed;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Timer */
+.timer {
+    font-size: 13px;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* Resend OTP */
+.resend {
+    font-size: 13px;
+    color: #3b82f6;
+    cursor: pointer;
+    display: none;
+}
+
+/* Success Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #10b981;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.error-box {
+    background: #ef4444;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+   /* PSYCHOMETRIC TEST UI */
+
+/* ================= TEST PAGE FIX ================= */
+
+.test-body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+}
+
+.test-wrapper {
+    width: 550px;
+    padding: 40px;
+    border-radius: 20px;
+    background: white;
+    color: #1f2933;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Question number */
+#q-number {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Progress */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#7c3aed,#ec4899);
+    border-radius: 10px;
+}
+
+/* Question */
+.question-card {
+    background: #f9fafb;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+/* ✅ OPTIONS FIXED */
+.options button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f3f4f6;
+    color: #111 !important;   /* 🔥 FORCE BLACK TEXT */
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover */
+.options button:hover {
+    background: linear-gradient(90deg,#7c3aed,#ec4899);
+    color: white;
+}
+
+/* Navigation */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    width: 45%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#7c3aed,#ec4899);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dashboard {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.dashboard-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.dashboard .card {
+    width: 250px;
+    padding: 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+
+    background: linear-gradient(135deg,#7c3aed,#ec4899);
+
+    transition: 0.3s;
+}
+
+.dashboard .card:hover {
+    transform: scale(1.05);
+}
+
+/* Career Test */ 
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step label {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.step input, .step select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Step title */
+#step-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.interest-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.interest-options button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #f3f4f6;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.interest-options button:hover {
+    background: linear-gradient(90deg,#7c3aed,#ec4899);
+    color: white;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Register Page CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-container">
+
+    <h2 class="auth-title">Create Account</h2>
+
+    <form method="POST" action="/register">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="date" name="dob" required>
+
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+
+        <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
+
+        <!-- Password -->
+        <div class="password-container">
+            <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" required>
+            <i class="fa-solid fa-eye toggle-eye" onclick="togglePassword()"></i>
+        </div>
+
+        <!-- OTP -->
+        <button type="button" class="btn otp-btn" onclick="sendOTP()">Send OTP</button>
+
+        <div class="loader" id="loader"></div>
+
+        <div class="timer" id="timer"></div>
+        <div class="resend" id="resend" onclick="sendOTP()">Resend OTP</div>
+
+        <input type="text" name="otp" placeholder="Enter OTP" required>
+
+        <button type="submit" class="btn register-btn">Register</button>
+
+    </form>
+
+    <a href="/login" class="auth-link">Already have account? Login</a>
+
+    {% if error %}
+<div class="error-box">
+    {{ error }}
+</div>
+{% endif %}
+
+</div>
+
+<div id="popup" class="popup">✅ Registered Successfully</div>
+
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+function sendOTP() {
+    let email = document.getElementById("email").value;
+    let loader = document.getElementById("loader");
+
+    if (!email) {
+        alert("Please enter a valid email address");
+        return;
+    }
+
+    loader.style.display = "block";
+
+    fetch("/send-otp", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email: email})
+    })
+    .then(res => res.json())
+    .then(data => {
+        loader.style.display = "none";
+        alert(data.message);
+        startTimer();
+    });
+}
+
+function startTimer() {
+    let time = 30;
+    let timer = document.getElementById("timer");
+    let resend = document.getElementById("resend");
+
+    resend.style.display = "none";
+
+    let interval = setInterval(() => {
+        timer.innerText = "Resend OTP in " + time + "s";
+        time--;
+
+        if (time < 0) {
+            clearInterval(interval);
+            timer.innerText = "";
+            resend.style.display = "block";
+        }
+    }, 1000);
+}
+
+function showPopup() {
+    let popup = document.getElementById("popup");
+    popup.style.display = "block";
+    setTimeout(() => popup.style.display = "none", 3000);
+}
+</script>
+
+{% if success %}
+<script>showPopup();</script>
+{% endif %}
+
+</body>
+</html>

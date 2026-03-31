@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+
+        <div class="dashboard">
+
+            <h1>Welcome, {{ name }} 👋</h1>
+
+            <p>Start your career journey with AI guidance 🚀</p>
+
+            <div class="dashboard-cards">
+
+                <a href="/psychometric-test" class="card">
+                    🧠 Psychometric Test
+                    <p>Discover your personality</p>
+                </a>
+
+                <a href="/career-test" class="card">
+                    🎯 Career Test
+                    <p>Analyze your interests and marks</p>
+                </a>
+
+                <a href="/result" class="card">
+                    📊 View Results
+                    <p>See your career prediction</p>
+                </a>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

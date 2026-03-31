@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Smart AI Career Guide</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">Smart AI Career Guide</div>
+      <ul>
+        <li>Home</li>
+        <li>How It Works</li>
+        <li>Why Choose Us</li>
+        <li>Feedback</li>
+        <li><a href="/login" class="login-btn">Login</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO-->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-left">
+          <img src="{{ url_for('static', filename='images/logo.png.jpeg') }}"
+            alt="Smart AI Logo">
+        </div>
+
+        <div class="hero-right">
+
+          <h1>AI Powered Smart Career Guidance System</h1>
+
+          <p>
+            Discover the best career path based on your skills, interests and
+            education
+            using Artificial Intelligence.
+          </p>
+
+          <a href="/register" class="hero-btn">Get Started</a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+
+      <h2>How Smart AI Career Guide Works</h2>
+
+      <div class="cards-container">
+
+        <div class="career-card">
+          <h3>📝 Take Career Test</h3>
+          <p>
+            Answer simple questions about your interests, skills and education.
+          </p>
+        </div>
+
+        <div class="career-card">
+          <h3>🤖 AI Analysis</h3>
+          <p>
+            Our AI analyzes your responses and compares them with career data.
+          </p>
+        </div>
+
+        <div class="career-card">
+          <h3>🚀 Career Recommendation</h3>
+          <p>
+            Get the best career suggestions based on your personality and
+            abilities.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WHY CHOOSE US -->
+
+    <section class="section alt">
+
+      <h2>Why Choose Smart AI Career Guide?</h2>
+
+      <div class="grid">
+
+        <div class="card">🧠 Multi-step intelligent quiz</div>
+
+        <div class="card">📊 Subject-wise analysis</div>
+
+        <div class="card">🧩 Psychometric assessment</div>
+
+        <div class="card">🎯 Interest and ideology mapping</div>
+
+        <div class="card">🤖 AI-based prediction engine</div>
+
+        <div class="card">🚀 Personalized career recommendations</div>
+
+      </div>
+
+    </section>
+
+    <!-- RESULT SECTION -->
+    <section class="section">
+      <h2>How Results Are Shown</h2>
+      <div class="result-box">
+        <p>
+          After completing the tests, users receive a personalized dashboard
+          showing recommended career fields, future scope, skill suggestions,
+          and alignment with their personality and long-term goals.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <h3>Have a Suggestion?</h3>
+      <p>Help us improve Smart AI Career Guide</p>
+      <textarea placeholder="Write your feedback here..."></textarea>
+      <button type="submit" class="btn-secondary"> Submit Feedback</button>
+      <p class="copyright">© 2026 Smart AI Career Guide</p>
+    </footer>
+
+  </body>
+</html>

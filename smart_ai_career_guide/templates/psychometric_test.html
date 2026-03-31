@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Psychometric Test</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body class="test-body">
+
+        <div class="test-wrapper">
+
+            <h2>Discover Your Career Personality 🚀</h2>
+
+            <div id="q-number">Question 1 of 25</div>
+
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+
+            <div class="question-card">
+                <p id="question-box">Loading...</p>
+            </div>
+
+            <!-- ✅ FIXED OPTIONS -->
+            <div class="options">
+                <button type="button" onclick="selectAnswer(1)">😕 Strongly
+                    Disagree</button>
+                <button type="button" onclick="selectAnswer(2)">🙁
+                    Disagree</button>
+                <button type="button" onclick="selectAnswer(3)">😐
+                    Neutral</button>
+                <button type="button" onclick="selectAnswer(4)">🙂
+                    Agree</button>
+                <button type="button" onclick="selectAnswer(5)">😄 Strongly
+                    Agree</button>
+            </div>
+
+            <div class="nav-buttons">
+                <button type="button" onclick="prevQuestion()">⬅
+                    Previous</button>
+                <button type="button" id="nextBtn" onclick="nextQuestion()">Next
+                    ➡</button>
+            </div>
+
+        </div>
+
+        <script
+            src="{{ url_for('static', filename='js/psychometric.js') }}"></script>
+
+    </body>
+</html>

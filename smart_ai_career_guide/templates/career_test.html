@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Career Test</title>
+		<link rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css') }}">
+	</head>
+
+	<body class="test-body">
+
+		<div class="test-wrapper">
+
+			<h2>Career Assessment 🎯</h2>
+
+			<div id="step-title">Step 1: Academic Strength</div>
+
+			<div class="progress-bar">
+				<div id="progress"></div>
+			</div>
+
+			<form id="careerForm" method="POST" action="/submit-career">
+
+				<!-- STEP 1 -->
+				<div class="step">
+					<label>Top 3 Subjects</label>
+					<input type="text" name="top_subjects"
+						placeholder="Math, Science, English">
+
+					<label>Weak Subjects</label>
+					<input type="text" name="weak_subjects" placeholder="History, Biology">
+				</div>
+
+				<!-- STEP 2 -->
+				<div class="step" style="display:none;">
+					<label>Select your interest</label>
+
+					<div class="interest-options">
+						<button type="button" onclick="selectInterest('tech')">💻 Tech</button>
+						<button type="button" onclick="selectInterest('creative')">🎨
+							Creative</button>
+						<button type="button" onclick="selectInterest('business')">📊
+							Business</button>
+						<button type="button" onclick="selectInterest('social')">🤝
+							Social</button>
+					</div>
+
+					<input type="hidden" name="interest" id="interest">
+				</div>
+
+				<!-- STEP 3 -->
+				<div class="step" style="display:none;">
+					<label>Your Skills</label>
+					<input type="text" name="skills" placeholder="Python, Design, Excel">
+
+					<label>Willing to relocate?</label>
+					<select name="relocation">
+						<option>Yes</option>
+						<option>No</option>
+					</select>
+				</div>
+
+			</form>
+
+			<!-- NAV -->
+			<div class="nav-buttons">
+				<button type="button" id="prevBtn">⬅ Previous</button>
+				<button type="button" id="nextBtn">Next ➡</button>
+				<button type="submit" form="careerForm">Submit</button>
+			</div>
+
+		</div>
+
+		<script src="{{ url_for('static', filename='js/CareerTest.js') }}"></script>
+
+	</body>
+</html>
