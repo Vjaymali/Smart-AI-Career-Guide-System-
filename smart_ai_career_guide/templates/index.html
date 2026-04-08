@@ -1,125 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Smart AI Career Guide</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=Sora:wght@600;700&display=swap"
-      rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AI Career Guide - Find Your Perfect Career Path</title>
     <link rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet">
   </head>
   <body>
-    <!-- NAVBAR -->
+
+    <!-- Navigation -->
     <nav class="navbar">
-      <div class="logo">Smart AI Career Guide</div>
-      <ul>
-        <li>Home</li>
-        <li>How It Works</li>
-        <li>Why Choose Us</li>
-        <li>Feedback</li>
-        <li><a href="/login" class="login-btn">Login</a></li>
-      </ul>
+      <div class="logo">🎯 Smart AI Career Guide</div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="/login" class="login-btn">Login</a>
+        <a href="/register" class="register-btn">Get Started</a>
+      </div>
     </nav>
 
-    <!-- HERO-->
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-container">
         <div class="hero-left">
-          <img src="{{ url_for('static', filename='images/logo.png.jpeg') }}"
-            alt="Smart AI Logo">
+          <img
+            src="https://illustrations.popsy.co/amber/student-going-to-school.svg"
+            alt="Career Guidance">
         </div>
-
         <div class="hero-right">
-
-          <h1>AI Powered Smart Career Guidance System</h1>
-
-          <p>
-            Discover the best career path based on your skills, interests and
-            education
-            using Artificial Intelligence.
-          </p>
-
-          <a href="/register" class="hero-btn">Get Started</a>
-
+          <h1>Discover Your <span class="gradient-text">Perfect Career</span>
+            with AI</h1>
+          <p>Advanced psychometric analysis + AI-powered recommendations to find
+            the career path that matches your personality, skills, and
+            aspirations.</p>
+          <a href="/register" class="hero-btn">Start Your Journey 🚀</a>
+          <div class="hero-stats">
+            <div class="stat">
+              <h3>30+</h3>
+              <p>Career Paths</p>
+            </div>
+            <div class="stat">
+              <h3>AI-Powered</h3>
+              <p>Predictions</p>
+            </div>
+            <div class="stat">
+              <h3>24/7</h3>
+              <p>AI Support</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="how-it-works">
-
-      <h2>How Smart AI Career Guide Works</h2>
-
-      <div class="cards-container">
-
-        <div class="career-card">
-          <h3>📝 Take Career Test</h3>
-          <p>
-            Answer simple questions about your interests, skills and education.
-          </p>
-        </div>
-
-        <div class="career-card">
-          <h3>🤖 AI Analysis</h3>
-          <p>
-            Our AI analyzes your responses and compares them with career data.
-          </p>
-        </div>
-
-        <div class="career-card">
-          <h3>🚀 Career Recommendation</h3>
-          <p>
-            Get the best career suggestions based on your personality and
-            abilities.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- WHY CHOOSE US -->
-
-    <section class="section alt">
-
-      <h2>Why Choose Smart AI Career Guide?</h2>
-
+    <!-- Features Section -->
+    <section class="section" id="features">
+      <h2>🌟 Why Choose Smart AI Career Guide?</h2>
       <div class="grid">
-
-        <div class="card">🧠 Multi-step intelligent quiz</div>
-
-        <div class="card">📊 Subject-wise analysis</div>
-
-        <div class="card">🧩 Psychometric assessment</div>
-
-        <div class="card">🎯 Interest and ideology mapping</div>
-
-        <div class="card">🤖 AI-based prediction engine</div>
-
-        <div class="card">🚀 Personalized career recommendations</div>
-
+        <div class="card feature-card">
+          <div class="icon">🧠</div>
+          <h3>Psychometric Analysis</h3>
+          <p>25-question scientific assessment analyzing technical, creative,
+            social, and business traits</p>
+        </div>
+        <div class="card feature-card">
+          <div class="icon">🤖</div>
+          <h3>AI-Powered Matching</h3>
+          <p>Advanced algorithms combining academic performance, personality,
+            and interests for accurate predictions</p>
+        </div>
+        <div class="card feature-card">
+          <div class="icon">💬</div>
+          <h3>24/7 AI Chatbot</h3>
+          <p>Get instant answers to your career questions anytime with our
+            intelligent chatbot assistant</p>
+        </div>
+        <div class="card feature-card">
+          <div class="icon">👨‍💼</div>
+          <h3>Expert Career Advisors</h3>
+          <p>Connect with certified professional career counselors for
+            personalized guidance</p>
+        </div>
+        <div class="card feature-card">
+          <div class="icon">📊</div>
+          <h3>Top 3 Career Recommendations</h3>
+          <p>Receive primary, secondary, and alternative career paths with
+            confidence percentages</p>
+        </div>
+        <div class="card feature-card">
+          <div class="icon">📈</div>
+          <h3>Detailed Insights</h3>
+          <p>Comprehensive reports with salary ranges, required skills, and
+            growth prospects</p>
+        </div>
       </div>
-
     </section>
 
-    <!-- RESULT SECTION -->
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <h2>📋 How It Works</h2>
+      <div class="cards-container">
+        <div class="career-card">
+          <div class="step-number">1</div>
+          <h3>📝 Register and Login</h3>
+          <p>Create your account with email verification for secure access</p>
+        </div>
+        <div class="career-card">
+          <div class="step-number">2</div>
+          <h3>🧠 Take Psychometric Test</h3>
+          <p>Complete our 25-question personality assessment (10-15 minutes)</p>
+        </div>
+        <div class="career-card">
+          <div class="step-number">3</div>
+          <h3>🎯 Complete Career Test</h3>
+          <p>Share your academic strengths, interests, and skills</p>
+        </div>
+        <div class="career-card">
+          <div class="step-number">4</div>
+          <h3>🤖 Get AI Analysis</h3>
+          <p>Our AI analyzes your data with weighted scoring (40% academic, 30%
+            psychometric, 30% interests)</p>
+        </div>
+        <div class="career-card">
+          <div class="step-number">5</div>
+          <h3>🎉 View Results</h3>
+          <p>Receive top 3 career recommendations with detailed insights and
+            confidence scores</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Categories Section -->
     <section class="section">
-      <h2>How Results Are Shown</h2>
-      <div class="result-box">
-        <p>
-          After completing the tests, users receive a personalized dashboard
-          showing recommended career fields, future scope, skill suggestions,
-          and alignment with their personality and long-term goals.
-        </p>
+      <h2>💼 Explore Career Categories</h2>
+      <div class="grid">
+        <div class="category-card">
+          <div class="category-icon">💻</div>
+          <h3>Technology</h3>
+          <p>Software Developer, Data Scientist, AI Engineer, Cybersecurity</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🎨</div>
+          <h3>Creative</h3>
+          <p>Graphic Designer, UX/UI Designer, Content Writer, Video Editor</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">📊</div>
+          <h3>Business</h3>
+          <p>Marketing Manager, Business Analyst, Financial Analyst, HR
+            Manager</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🏥</div>
+          <h3>Medical</h3>
+          <p>Doctor, Nurse, Pharmacist, Psychologist</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">⚙️</div>
+          <h3>Engineering</h3>
+          <p>Mechanical Engineer, Civil Engineer, Architect</p>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">👥</div>
+          <h3>Social Services</h3>
+          <p>Teacher, Social Worker, Counselor</p>
+        </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Discover Your Perfect Career?</h2>
+      <p>Join thousands of students who found their career path with our
+        AI-powered guidance</p>
+      <a href="/register" class="cta-btn">Get Started Free 🚀</a>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <h3>Have a Suggestion?</h3>
-      <p>Help us improve Smart AI Career Guide</p>
-      <textarea placeholder="Write your feedback here..."></textarea>
-      <button type="submit" class="btn-secondary"> Submit Feedback</button>
-      <p class="copyright">© 2026 Smart AI Career Guide</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Smart AI Career Guide</h3>
+          <p>Empowering students to find their perfect career path through
+            AI-driven insights</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>📧 support@smartaicareer.com</p>
+          <p>📞 +1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Smart AI Career Guide. All rights reserved.</p>
+      </div>
     </footer>
 
   </body>

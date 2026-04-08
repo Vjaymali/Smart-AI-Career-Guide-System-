@@ -1,0 +1,604 @@
+{
+  "careers": [
+    {
+      "id": 1,
+      "name": "Software Developer",
+      "category": "Technology",
+      "required_subjects": ["Math", "Computer Science", "Physics"],
+      "optional_subjects": ["Statistics", "Electronics"],
+      "min_math_score": 70,
+      "min_science_score": 65,
+      "personality_fit": {
+        "technical": 70,
+        "creative": 40,
+        "social": 30,
+        "business": 40
+      },
+      "interests": ["tech", "problem-solving"],
+      "skills": ["Coding", "Logic", "Problem Solving"],
+      "salary_range": "$60,000 - $150,000",
+      "growth_prospects": "Excellent",
+      "description": "Build software applications, websites, and mobile apps"
+    },
+    {
+      "id": 2,
+      "name": "Data Scientist",
+      "category": "Technology",
+      "required_subjects": ["Math", "Statistics", "Computer Science"],
+      "optional_subjects": ["Physics", "Economics"],
+      "min_math_score": 75,
+      "min_science_score": 70,
+      "personality_fit": {
+        "technical": 75,
+        "creative": 45,
+        "social": 35,
+        "business": 50
+      },
+      "interests": ["tech", "analytics"],
+      "skills": ["Python", "Statistics", "Machine Learning"],
+      "salary_range": "$70,000 - $160,000",
+      "growth_prospects": "Excellent",
+      "description": "Analyze complex data to drive business decisions"
+    },
+    {
+      "id": 3,
+      "name": "AI/ML Engineer",
+      "category": "Technology",
+      "required_subjects": ["Math", "Computer Science", "Statistics"],
+      "optional_subjects": ["Physics"],
+      "min_math_score": 80,
+      "min_science_score": 75,
+      "personality_fit": {
+        "technical": 80,
+        "creative": 50,
+        "social": 30,
+        "business": 45
+      },
+      "interests": ["tech", "research"],
+      "skills": ["Python", "Deep Learning", "Neural Networks"],
+      "salary_range": "$90,000 - $200,000",
+      "growth_prospects": "Exceptional",
+      "description": "Develop intelligent systems and machine learning models"
+    },
+    {
+      "id": 4,
+      "name": "Graphic Designer",
+      "category": "Creative",
+      "required_subjects": ["Art", "Design"],
+      "optional_subjects": ["Computer Science", "Marketing"],
+      "min_math_score": 50,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 40,
+        "creative": 85,
+        "social": 45,
+        "business": 40
+      },
+      "interests": ["creative", "design"],
+      "skills": ["Adobe Photoshop", "Illustrator", "Creativity"],
+      "salary_range": "$40,000 - $90,000",
+      "growth_prospects": "Good",
+      "description": "Create visual content for brands and media"
+    },
+    {
+      "id": 5,
+      "name": "UX/UI Designer",
+      "category": "Creative & Tech",
+      "required_subjects": ["Design", "Psychology"],
+      "optional_subjects": ["Computer Science"],
+      "min_math_score": 60,
+      "min_science_score": 55,
+      "personality_fit": {
+        "technical": 55,
+        "creative": 80,
+        "social": 60,
+        "business": 50
+      },
+      "interests": ["creative", "tech", "design"],
+      "skills": ["Figma", "User Research", "Prototyping"],
+      "salary_range": "$60,000 - $130,000",
+      "growth_prospects": "Excellent",
+      "description": "Design user-friendly digital interfaces"
+    },
+    {
+      "id": 6,
+      "name": "Marketing Manager",
+      "category": "Business",
+      "required_subjects": ["Business", "Marketing", "English"],
+      "optional_subjects": ["Psychology", "Statistics"],
+      "min_math_score": 60,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 40,
+        "creative": 65,
+        "social": 70,
+        "business": 80
+      },
+      "interests": ["business", "communication"],
+      "skills": ["Strategy", "Communication", "Analytics"],
+      "salary_range": "$55,000 - $120,000",
+      "growth_prospects": "Very Good",
+      "description": "Plan and execute marketing campaigns"
+    },
+    {
+      "id": 7,
+      "name": "Business Analyst",
+      "category": "Business",
+      "required_subjects": ["Business", "Math", "Economics"],
+      "optional_subjects": ["Computer Science", "Statistics"],
+      "min_math_score": 70,
+      "min_science_score": 60,
+      "personality_fit": {
+        "technical": 60,
+        "creative": 45,
+        "social": 55,
+        "business": 80
+      },
+      "interests": ["business", "analytics"],
+      "skills": ["Data Analysis", "Excel", "Problem Solving"],
+      "salary_range": "$60,000 - $110,000",
+      "growth_prospects": "Excellent",
+      "description": "Analyze business processes and recommend improvements"
+    },
+    {
+      "id": 8,
+      "name": "Social Worker",
+      "category": "Social Services",
+      "required_subjects": ["Psychology", "Sociology", "English"],
+      "optional_subjects": ["Health Science"],
+      "min_math_score": 50,
+      "min_science_score": 55,
+      "personality_fit": {
+        "technical": 30,
+        "creative": 45,
+        "social": 90,
+        "business": 35
+      },
+      "interests": ["social", "helping-others"],
+      "skills": ["Empathy", "Communication", "Counseling"],
+      "salary_range": "$40,000 - $70,000",
+      "growth_prospects": "Good",
+      "description": "Support individuals and communities in need"
+    },
+    {
+      "id": 9,
+      "name": "Teacher/Educator",
+      "category": "Education",
+      "required_subjects": ["Education", "English"],
+      "optional_subjects": ["Psychology", "Subject Specialization"],
+      "min_math_score": 60,
+      "min_science_score": 60,
+      "personality_fit": {
+        "technical": 40,
+        "creative": 60,
+        "social": 85,
+        "business": 40
+      },
+      "interests": ["social", "teaching"],
+      "skills": ["Communication", "Patience", "Subject Knowledge"],
+      "salary_range": "$40,000 - $80,000",
+      "growth_prospects": "Stable",
+      "description": "Educate and mentor students"
+    },
+    {
+      "id": 10,
+      "name": "Mechanical Engineer",
+      "category": "Engineering",
+      "required_subjects": ["Math", "Physics", "Engineering"],
+      "optional_subjects": ["Computer Science"],
+      "min_math_score": 75,
+      "min_science_score": 75,
+      "personality_fit": {
+        "technical": 80,
+        "creative": 55,
+        "social": 40,
+        "business": 45
+      },
+      "interests": ["tech", "building"],
+      "skills": ["CAD", "Problem Solving", "Physics"],
+      "salary_range": "$60,000 - $120,000",
+      "growth_prospects": "Very Good",
+      "description": "Design and develop mechanical systems"
+    },
+    {
+      "id": 11,
+      "name": "Civil Engineer",
+      "category": "Engineering",
+      "required_subjects": ["Math", "Physics", "Engineering"],
+      "optional_subjects": ["Geography"],
+      "min_math_score": 73,
+      "min_science_score": 73,
+      "personality_fit": {
+        "technical": 75,
+        "creative": 50,
+        "social": 45,
+        "business": 50
+      },
+      "interests": ["tech", "building", "infrastructure"],
+      "skills": ["AutoCAD", "Project Management", "Structural Analysis"],
+      "salary_range": "$55,000 - $115,000",
+      "growth_prospects": "Very Good",
+      "description": "Design and oversee construction projects"
+    },
+    {
+      "id": 12,
+      "name": "Doctor (MBBS)",
+      "category": "Medical",
+      "required_subjects": ["Biology", "Chemistry", "Physics"],
+      "optional_subjects": ["Math"],
+      "min_math_score": 65,
+      "min_science_score": 85,
+      "personality_fit": {
+        "technical": 70,
+        "creative": 45,
+        "social": 80,
+        "business": 40
+      },
+      "interests": ["medical", "helping-others"],
+      "skills": ["Medical Knowledge", "Empathy", "Decision Making"],
+      "salary_range": "$80,000 - $300,000",
+      "growth_prospects": "Excellent",
+      "description": "Diagnose and treat patients"
+    },
+    {
+      "id": 13,
+      "name": "Nurse",
+      "category": "Medical",
+      "required_subjects": ["Biology", "Chemistry", "Health Science"],
+      "optional_subjects": ["Psychology"],
+      "min_math_score": 60,
+      "min_science_score": 75,
+      "personality_fit": {
+        "technical": 55,
+        "creative": 40,
+        "social": 85,
+        "business": 35
+      },
+      "interests": ["medical", "helping-others", "social"],
+      "skills": ["Patient Care", "Communication", "Medical Procedures"],
+      "salary_range": "$50,000 - $90,000",
+      "growth_prospects": "Excellent",
+      "description": "Provide patient care and medical support"
+    },
+    {
+      "id": 14,
+      "name": "Psychologist",
+      "category": "Healthcare",
+      "required_subjects": ["Psychology", "Biology", "Sociology"],
+      "optional_subjects": ["Statistics"],
+      "min_math_score": 65,
+      "min_science_score": 70,
+      "personality_fit": {
+        "technical": 50,
+        "creative": 55,
+        "social": 90,
+        "business": 40
+      },
+      "interests": ["social", "helping-others", "research"],
+      "skills": ["Counseling", "Empathy", "Research"],
+      "salary_range": "$50,000 - $100,000",
+      "growth_prospects": "Very Good",
+      "description": "Study human behavior and provide mental health support"
+    },
+    {
+      "id": 15,
+      "name": "Entrepreneur",
+      "category": "Business",
+      "required_subjects": ["Business", "Economics"],
+      "optional_subjects": ["Any field of interest"],
+      "min_math_score": 65,
+      "min_science_score": 55,
+      "personality_fit": {
+        "technical": 50,
+        "creative": 70,
+        "social": 65,
+        "business": 90
+      },
+      "interests": ["business", "innovation"],
+      "skills": ["Leadership", "Risk Taking", "Vision"],
+      "salary_range": "Variable ($0 - $1M+)",
+      "growth_prospects": "High Risk / High Reward",
+      "description": "Start and run your own business"
+    },
+    {
+      "id": 16,
+      "name": "Digital Marketing Specialist",
+      "category": "Marketing & Tech",
+      "required_subjects": ["Marketing", "English"],
+      "optional_subjects": ["Computer Science", "Design"],
+      "min_math_score": 60,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 55,
+        "creative": 70,
+        "social": 65,
+        "business": 75
+      },
+      "interests": ["business", "creative", "tech"],
+      "skills": ["SEO", "Social Media", "Content Creation"],
+      "salary_range": "$45,000 - $95,000",
+      "growth_prospects": "Excellent",
+      "description": "Promote products/services through digital channels"
+    },
+    {
+      "id": 17,
+      "name": "Content Writer/Copywriter",
+      "category": "Creative",
+      "required_subjects": ["English", "Literature"],
+      "optional_subjects": ["Marketing", "Communications"],
+      "min_math_score": 50,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 35,
+        "creative": 90,
+        "social": 55,
+        "business": 50
+      },
+      "interests": ["creative", "writing"],
+      "skills": ["Writing", "Creativity", "Research"],
+      "salary_range": "$40,000 - $85,000",
+      "growth_prospects": "Good",
+      "description": "Create engaging written content for various media"
+    },
+    {
+      "id": 18,
+      "name": "Chartered Accountant",
+      "category": "Finance",
+      "required_subjects": ["Accounting", "Math", "Economics"],
+      "optional_subjects": ["Business"],
+      "min_math_score": 80,
+      "min_science_score": 60,
+      "personality_fit": {
+        "technical": 75,
+        "creative": 35,
+        "social": 45,
+        "business": 80
+      },
+      "interests": ["business", "finance"],
+      "skills": ["Accounting", "Tax", "Auditing"],
+      "salary_range": "$55,000 - $130,000",
+      "growth_prospects": "Very Good",
+      "description": "Manage financial records and provide tax advice"
+    },
+    {
+      "id": 19,
+      "name": "Architect",
+      "category": "Design & Engineering",
+      "required_subjects": ["Math", "Physics", "Art/Design"],
+      "optional_subjects": ["Engineering"],
+      "min_math_score": 75,
+      "min_science_score": 70,
+      "personality_fit": {
+        "technical": 75,
+        "creative": 85,
+        "social": 50,
+        "business": 55
+      },
+      "interests": ["creative", "tech", "building"],
+      "skills": ["CAD", "Design", "Spatial Thinking"],
+      "salary_range": "$60,000 - $140,000",
+      "growth_prospects": "Very Good",
+      "description": "Design buildings and structures"
+    },
+    {
+      "id": 20,
+      "name": "Pharmacist",
+      "category": "Medical",
+      "required_subjects": ["Chemistry", "Biology", "Math"],
+      "optional_subjects": ["Physics"],
+      "min_math_score": 70,
+      "min_science_score": 80,
+      "personality_fit": {
+        "technical": 70,
+        "creative": 40,
+        "social": 65,
+        "business": 50
+      },
+      "interests": ["medical", "science"],
+      "skills": ["Pharmaceutical Knowledge", "Accuracy", "Patient Care"],
+      "salary_range": "$80,000 - $130,000",
+      "growth_prospects": "Excellent",
+      "description": "Dispense medications and provide pharmaceutical care"
+    },
+    {
+      "id": 21,
+      "name": "Lawyer/Attorney",
+      "category": "Law",
+      "required_subjects": ["English", "History", "Political Science"],
+      "optional_subjects": ["Economics"],
+      "min_math_score": 65,
+      "min_science_score": 55,
+      "personality_fit": {
+        "technical": 50,
+        "creative": 60,
+        "social": 75,
+        "business": 75
+      },
+      "interests": ["social", "business", "justice"],
+      "skills": ["Argumentation", "Research", "Critical Thinking"],
+      "salary_range": "$60,000 - $200,000",
+      "growth_prospects": "Very Good",
+      "description": "Represent clients and provide legal advice"
+    },
+    {
+      "id": 22,
+      "name": "Journalist/Reporter",
+      "category": "Media",
+      "required_subjects": ["English", "Communications"],
+      "optional_subjects": ["Political Science", "History"],
+      "min_math_score": 55,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 40,
+        "creative": 75,
+        "social": 80,
+        "business": 55
+      },
+      "interests": ["creative", "social", "writing"],
+      "skills": ["Writing", "Investigation", "Communication"],
+      "salary_range": "$35,000 - $90,000",
+      "growth_prospects": "Moderate",
+      "description": "Report news and create journalistic content"
+    },
+    {
+      "id": 23,
+      "name": "Financial Analyst",
+      "category": "Finance",
+      "required_subjects": ["Math", "Economics", "Business"],
+      "optional_subjects": ["Statistics"],
+      "min_math_score": 75,
+      "min_science_score": 60,
+      "personality_fit": {
+        "technical": 70,
+        "creative": 40,
+        "social": 50,
+        "business": 85
+      },
+      "interests": ["business", "analytics"],
+      "skills": ["Financial Modeling", "Excel", "Research"],
+      "salary_range": "$60,000 - $125,000",
+      "growth_prospects": "Excellent",
+      "description": "Analyze financial data to guide investment decisions"
+    },
+    {
+      "id": 24,
+      "name": "Product Manager",
+      "category": "Business & Tech",
+      "required_subjects": ["Business", "Computer Science"],
+      "optional_subjects": ["Design", "Marketing"],
+      "min_math_score": 70,
+      "min_science_score": 65,
+      "personality_fit": {
+        "technical": 65,
+        "creative": 60,
+        "social": 70,
+        "business": 85
+      },
+      "interests": ["business", "tech"],
+      "skills": ["Product Strategy", "Leadership", "Communication"],
+      "salary_range": "$80,000 - $160,000",
+      "growth_prospects": "Excellent",
+      "description": "Lead product development from concept to launch"
+    },
+    {
+      "id": 25,
+      "name": "Video Editor/Filmmaker",
+      "category": "Creative",
+      "required_subjects": ["Art", "Media Studies"],
+      "optional_subjects": ["Computer Science"],
+      "min_math_score": 50,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 60,
+        "creative": 90,
+        "social": 50,
+        "business": 45
+      },
+      "interests": ["creative", "media"],
+      "skills": ["Video Editing", "Storytelling", "Adobe Premiere"],
+      "salary_range": "$40,000 - $100,000",
+      "growth_prospects": "Good",
+      "description": "Edit and create video content"
+    },
+    {
+      "id": 26,
+      "name": "Cybersecurity Specialist",
+      "category": "Technology",
+      "required_subjects": ["Computer Science", "Math"],
+      "optional_subjects": ["Networking", "Cryptography"],
+      "min_math_score": 75,
+      "min_science_score": 70,
+      "personality_fit": {
+        "technical": 90,
+        "creative": 50,
+        "social": 35,
+        "business": 50
+      },
+      "interests": ["tech", "security"],
+      "skills": ["Network Security", "Ethical Hacking", "Risk Assessment"],
+      "salary_range": "$70,000 - $150,000",
+      "growth_prospects": "Exceptional",
+      "description": "Protect systems and data from cyber threats"
+    },
+    {
+      "id": 27,
+      "name": "Hotel Manager",
+      "category": "Hospitality",
+      "required_subjects": ["Business", "Hospitality Management"],
+      "optional_subjects": ["English", "Marketing"],
+      "min_math_score": 60,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 40,
+        "creative": 55,
+        "social": 85,
+        "business": 80
+      },
+      "interests": ["social", "business"],
+      "skills": ["Customer Service", "Management", "Communication"],
+      "salary_range": "$45,000 - $100,000",
+      "growth_prospects": "Good",
+      "description": "Oversee hotel operations and guest services"
+    },
+    {
+      "id": 28,
+      "name": "Environmental Scientist",
+      "category": "Science",
+      "required_subjects": ["Environmental Science", "Biology", "Chemistry"],
+      "optional_subjects": ["Geography"],
+      "min_math_score": 70,
+      "min_science_score": 80,
+      "personality_fit": {
+        "technical": 75,
+        "creative": 50,
+        "social": 55,
+        "business": 45
+      },
+      "interests": ["science", "environment"],
+      "skills": ["Research", "Data Analysis", "Environmental Assessment"],
+      "salary_range": "$50,000 - $95,000",
+      "growth_prospects": "Very Good",
+      "description": "Study and protect the environment"
+    },
+    {
+      "id": 29,
+      "name": "Human Resources Manager",
+      "category": "Business",
+      "required_subjects": ["Business", "Psychology", "English"],
+      "optional_subjects": ["Law"],
+      "min_math_score": 60,
+      "min_science_score": 50,
+      "personality_fit": {
+        "technical": 45,
+        "creative": 50,
+        "social": 90,
+        "business": 80
+      },
+      "interests": ["social", "business"],
+      "skills": ["Recruitment", "People Management", "Communication"],
+      "salary_range": "$55,000 - $115,000",
+      "growth_prospects": "Very Good",
+      "description": "Manage employee relations and organizational development"
+    },
+    {
+      "id": 30,
+      "name": "Game Developer",
+      "category": "Technology & Creative",
+      "required_subjects": ["Computer Science", "Math"],
+      "optional_subjects": ["Art", "Design"],
+      "min_math_score": 75,
+      "min_science_score": 70,
+      "personality_fit": {
+        "technical": 85,
+        "creative": 80,
+        "social": 40,
+        "business": 45
+      },
+      "interests": ["tech", "creative", "gaming"],
+      "skills": ["Programming", "Game Design", "Unity/Unreal"],
+      "salary_range": "$55,000 - $130,000",
+      "growth_prospects": "Excellent",
+      "description": "Create interactive video games"
+    }
+  ]
+}

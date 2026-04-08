@@ -1,39 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard - Smart AI Career Guide</title>
         <link rel="stylesheet"
             href="{{ url_for('static', filename='css/style.css') }}">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+            rel="stylesheet">
     </head>
+    <body class="dashboard-body">
 
-    <body>
+        <!-- Navigation -->
+        <nav class="dashboard-nav">
+            <div class="logo">🎯 Smart AI Career Guide</div>
+            <div class="nav-right">
+                <span class="user-greeting">👋 Hi, {{ name }}!</span>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </div>
+        </nav>
 
-        <div class="dashboard">
-
-            <h1>Welcome, {{ name }} 👋</h1>
-
-            <p>Start your career journey with AI guidance 🚀</p>
-
-            <div class="dashboard-cards">
-
-                <a href="/psychometric-test" class="card">
-                    🧠 Psychometric Test
-                    <p>Discover your personality</p>
-                </a>
-
-                <a href="/career-test" class="card">
-                    🎯 Career Test
-                    <p>Analyze your interests and marks</p>
-                </a>
-
-                <a href="/result" class="card">
-                    📊 View Results
-                    <p>See your career prediction</p>
-                </a>
-
+        <!-- Hero Welcome Section -->
+        <section class="dashboard-hero">
+            <div class="welcome-content">
+                <h1>Welcome back, <span class="gradient-text">{{ name }}</span>!
+                    🎉</h1>
+                <p>Your personalized career journey awaits. Complete your tests
+                    to discover your perfect career path.</p>
             </div>
 
-        </div>
+            <!-- Progress Overview -->
+            <div class="progress-overview">
+                <div
+                    class="progress-card {% if psych_completed %}completed{% endif %}">
+                    <div class="progress-icon">{% if psych_completed %}✅{% else
+                        %}⏳{% endif %}</div>
+                    <h3>Psychometric Test</h3>
+                    <p>{% if psych_completed %}Completed{% else %}Pending{%
+                        endif %}</p>
+                </div>
+                <div
+                    class="progress-card {% if career_completed %}completed{% endif %}">
+                    <div class="progress-icon">{% if career_completed %}✅{% else
+                        %}⏳{% endif %}</div>
+                    <h3>Career Test</h3>
+                    <p>{% if career_completed %}Completed{% else %}Pending{%
+                        endif %}</p>
+                </div>
+                <div class="progress-card {% if result %}completed{% endif %}">
+                    <div class="progress-icon">{% if result %}✅{% else %}⏳{%
+                        endif %}</div>
+                    <h3>Results Ready</h3>
+                    <p>{% if result %}Available{% else %}Complete tests first{%
+                        endif %}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Actions -->
+        <section class="dashboard-main">
+            <h2>🚀 Your Career Journey</h2>
+
+            <div class="dashboard-grid">
+                <!-- Psychometric Test Card -->
+                <div class="action-card">
+                    <div class="card-header">
+                        <div class="card-icon psychometric">🧠</div>
+                        <h3>Psychometric Test</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Discover your personality traits across 4 key
+                            dimensions</p>
+                        <ul class="features-list">
+                            <li>✓ 25 Scientific Questions</li>
+                            <li>✓ 10-15 Minutes</li>
+                            <li>✓ Technical, Creative, Social, Business
+                                Analysis</li>
+                        </ul>
+                        <div class="card-status">
+                            {% if psych_completed %}
+                            <span class="status-badge completed">✅
+                                Completed</span>
+                            {% else %}
+                            <span class="status-badge pending">⏳ Not
+                                Started</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/psychometric-test" class="btn-primary"
+                            data-testid="psychometric-test-btn">
+                            {% if psych_completed %}Retake Test{% else %}Start
+                            Test{% endif %} →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Career Test Card -->
+                <div class="action-card">
+                    <div class="card-header">
+                        <div class="card-icon career">🎯</div>
+                        <h3>Career Assessment</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Share your academic strengths, interests, and
+                            skills</p>
+                        <ul class="features-list">
+                            <li>✓ Academic Performance</li>
+                            <li>✓ Personal Interests</li>
+                            <li>✓ Skills and Preferences</li>
+                        </ul>
+                        <div class="card-status">
+                            {% if career_completed %}
+                            <span class="status-badge completed">✅
+                                Completed</span>
+                            {% else %}
+                            <span class="status-badge pending">⏳ Not
+                                Started</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/career-test" class="btn-primary"
+                            data-testid="career-test-btn">
+                            {% if career_completed %}Retake Test{% else %}Start
+                            Test{% endif %} →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Results Card -->
+                <div class="action-card">
+                    <div class="card-header">
+                        <div class="card-icon results">📊</div>
+                        <h3>Career Recommendations</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>View your top 3 AI-powered career matches</p>
+                        {% if result %}
+                        <ul class="features-list">
+                            <li>🥇 {{ result.primary_career }}</li>
+                            <li>🥈 {{ result.secondary_career }}</li>
+                            <li>🥉 {{ result.alternative_career }}</li>
+                        </ul>
+                        {% else %}
+                        <ul class="features-list">
+                            <li>✓ Primary Career Path</li>
+                            <li>✓ Secondary Option</li>
+                            <li>✓ Alternative Path</li>
+                        </ul>
+                        {% endif %}
+                        <div class="card-status">
+                            {% if result %}
+                            <span class="status-badge completed">✅
+                                Available</span>
+                            {% else %}
+                            <span class="status-badge pending">⏳ Complete tests
+                                first</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        {% if result %}
+                        <a href="/result" class="btn-primary"
+                            data-testid="view-results-btn">View Results →</a>
+                        {% else %}
+                        <button type="button" class="btn-disabled" disabled
+                            data-testid="view-results-btn-disabled">Complete
+                            Tests First</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Services -->
+        <section class="additional-services">
+            <h2>💡 Additional Support</h2>
+
+            <div class="services-grid">
+                <!-- AI Chatbot -->
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Career Chatbot</h3>
+                    <p>Get instant answers to your career questions 24/7</p>
+                    <a href="/chatbot" class="btn-secondary"
+                        data-testid="chatbot-btn">Chat Now 💬</a>
+                </div>
+
+                <!-- Career Advisor -->
+                <div class="service-card">
+                    <div class="service-icon">👨‍💼</div>
+                    <h3>Talk to Expert Advisors</h3>
+                    <p>Schedule a session with certified career counselors</p>
+                    <a href="/career-advisor" class="btn-secondary"
+                        data-testid="advisor-btn">Book Session 📅</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats (if results available) -->
+        {% if result %}
+        <section class="quick-stats">
+            <h2>📈 Your Career Match Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">{{ result.primary_confidence
+                        }}%</div>
+                    <div class="stat-label">Best Match Confidence</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">{{ result.academic_score|round(0)
+                        }}%</div>
+                    <div class="stat-label">Academic Fit</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">{{
+                        result.psychometric_score|round(0) }}%</div>
+                    <div class="stat-label">Personality Fit</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">{{ result.interest_score|round(0)
+                        }}%</div>
+                    <div class="stat-label">Interest Match</div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>&copy; 2026 Smart AI Career Guide. Your journey to the perfect
+                career starts here.</p>
+        </footer>
 
     </body>
 </html>
+"
