@@ -9,7 +9,13 @@ import json
 import os
 from dotenv import load_dotenv
 import asyncio
-# from emergent_sdk.chat import LlmChat, UserMessage
+import google.generativeai as genai
+from flask import request, jsonify, session
+
+# Configure Gemini
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
+
+model = genai.GenerativeModel("gemini-1.5-flash")  
 
 # Load environment variables
 load_dotenv()
@@ -479,71 +485,69 @@ def result():
     return render_template("result.html", result=result_data, careers=career_details)
 
 # ================= AI CHATBOT =================
-@app.route("/chatbot")
-def chatbot_page():
-    if "user_id" not in session:
-        return redirect("/login")
-    return render_template("chatbot.html")
-
-@app.route("/api/chat", methods=["POST"])
-async def chat_api():
-    if "user_id" not in session:
-        return jsonify({"error": "Not logged in"}), 401
-    
-    data = request.get_json()
-    user_message = data.get("message", "")
-    
-    if not user_message:
-        return jsonify({"error": "No message provided"}), 400
-    
-    user_id = session["user_id"]
-    session_id = f"user_{user_id}_session"
-    
-    # Initialize chatbot
-    chat = LlmChat(
-        api_key=os.getenv('EMERGENT_LLM_KEY'),
-        session_id=session_id,
-        system_message="""You are a helpful career guidance counselor for the Smart AI Career Guide platform. 
-        Help users navigate the platform, answer career-related questions, and provide guidance on:
-        - Taking psychometric tests
-        - Understanding career test results
-        - Exploring different career paths
-        - Skills needed for various careers
-        - Educational requirements
-        
-        Be friendly, supportive, and encouraging. Keep responses concise and actionable."""
-    ).with_model("gemini", "gemini-3-flash-preview")
-    
-    # Create user message
-    message = UserMessage(text=user_message)
-    
+@app.route('/chat_api', methods=['POST'])
+def chat_api():
     try:
-        # Get AI response
-        response = await chat.send_message(message)
-        
-        # Save to database
-        db = get_db_connection()
-        cursor = db.cursor()
-        
-        cursor.execute("""
-            INSERT INTO chat_history (user_id, session_id, role, message)
-            VALUES (%s, %s, %s, %s)
-        """, (user_id, session_id, 'user', user_message))
-        
-        cursor.execute("""
-            INSERT INTO chat_history (user_id, session_id, role, message)
-            VALUES (%s, %s, %s, %s)
-        """, (user_id, session_id, 'assistant', response))
-        
-        db.commit()
-        cursor.close()
-        db.close()
-        
-        return jsonify({"response": response})
-    
+        # Get user message
+        data = request.get_json()
+        user_message = data.get("message")
+
+        if not user_message:
+            return jsonify({"error": "Message is required"}), 400
+
+        # Optional: get user session
+        user_id = session.get("user_id", None)
+        session_id = f"{user_id}_session" if user_id else "guest_session"
+
+        # System prompt (your AI behavior)
+        system_prompt = """
+        You are a helpful career guidance counselor for the Smart AI Career Guide platform.
+        Help users with:
+        - Career suggestions
+        - Skills required
+        - Roadmaps
+        - Learning resources
+
+        Keep answers simple, clear, and helpful.
+        """
+
+        # Combine prompt + user input
+        full_prompt = system_prompt + "\nUser: " + user_message
+
+        # Generate response from Gemini
+        response = model.generate_content(full_prompt)
+
+        ai_reply = response.text
+
+        # Save chat to database
+        try:
+            db = get_db_connection()
+            cursor = db.cursor()
+
+            cursor.execute("""
+                INSERT INTO chat_history (user_id, session_id, role, message)
+                VALUES (%s, %s, %s, %s)
+            """, (user_id, session_id, "user", user_message))
+
+            cursor.execute("""
+                INSERT INTO chat_history (user_id, session_id, role, message)
+                VALUES (%s, %s, %s, %s)
+            """, (user_id, session_id, "ai", ai_reply))
+
+            db.commit()
+            cursor.close()
+            db.close()
+
+        except Exception as db_error:
+            print("DB Error:", db_error)
+
+        return jsonify({
+            "reply": ai_reply
+        })
+
     except Exception as e:
-        print(f"Chatbot error: {e}")
-        return jsonify({"error": "Failed to get response"}), 500
+        print("Error:", str(e))
+        return jsonify({"error": "Something went wrong"}), 500
 
 # ================= CAREER ADVISOR BOOKING =================
 @app.route("/career-advisor")
